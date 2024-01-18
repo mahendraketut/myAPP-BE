@@ -7,4 +7,10 @@ app.use("/", express.static(path.join(__dirname, "/public")));
 
 app.use("/", require("./routes/root"));
 
+// Import the API routes
+const apiRoutes = require("./routes/api");
+
+// Use the API routes
+app.use("/api", apiRoutes);
+
 app.listen(PORT, () => console.log("Server running on port", PORT));
